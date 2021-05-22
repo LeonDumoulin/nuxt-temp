@@ -16,7 +16,7 @@ export default {
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
         ],
         script: [
-            { src: '@/plugins/chart.js' }
+            //  { src: '~/plugins/chart.js' }
         ]
     },
     pwa: {
@@ -44,7 +44,8 @@ export default {
 
     // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
     plugins: [
-        // '@/plugins/chart.js'
+        // '~/plugins/chart.js',
+        '~/plugins/direction-control',
         "~/plugins/bootstrap.min.js",
         "~/plugins/js.cookie.min.js",
         "~/plugins/metismenu.js",
@@ -61,6 +62,26 @@ export default {
 
     // Modules (https://go.nuxtjs.dev/config-modules)
     modules: [
+        [
+            'nuxt-i18n',
+            {
+                locales: [{
+                        code: 'en',
+                        file: 'en.json',
+                        dir: 'ltr',
+                        name: 'English',
+                    },
+                    {
+                        code: 'ar',
+                        file: 'ar.json',
+                        dir: 'rtl', // that will be passed to your app
+                        name: 'عربي',
+                    },
+                ],
+                langDir: 'lang/',
+                defaultLocale: 'ar',
+            },
+        ],
         // https://go.nuxtjs.dev/axios
         '@nuxtjs/axios',
         // https://go.nuxtjs.dev/pwa

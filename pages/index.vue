@@ -1,25 +1,50 @@
 <template>
   <div class="container">
+  <div class="bb">
+  <a
+  href="#"
+  v-for="locale in availableLocales"
+  :key="locale.code"
+  @click.prevent.stop="$i18n.setLocale(locale.code)">{{ locale.name }}</a>
+  </div>
+
+<div>
+<input class="input-phone" type="text"/>
+</div>
+
     <div class="Chart">
       <h1 style="text-align: center">Chart Vue</h1>
       <bar-example />
     </div>
     <div class="ckeditor">
-      <h1>ckeditor</h1>
+      <h1>ckeditoraa {{ $t('name') }}</h1>
     <ckeditor v-model="editorData" :config="editorConfig"></ckeditor>
     </div>
   </div>
 </template>
 
 <script>
-import BarExample from './BarExample'
+import BarExample from '~/plugins/BarExample'
 import Vue from 'vue'
 import CKEditor from 'ckeditor4-vue'
+import Cleave from 'cleave.js';
 Vue.use(CKEditor)
+const cleave = new Cleave('.input-phone', {
+    phone: true,
+    phoneRegionCode: '{country}'
+});
+
+
+
 
 export default {
   name: 'index',
 
+computed: {
+  availableLocales () {
+    return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
+  }
+},
   components: {
     BarExample,
   },
