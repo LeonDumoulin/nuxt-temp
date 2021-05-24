@@ -484,6 +484,9 @@
 </template>
 <script>
 export default {
+  layout(context) {
+    return 'default2'
+  },
         name: "index",
 data() {
           return {

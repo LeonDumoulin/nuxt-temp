@@ -11,7 +11,10 @@
     import Cleave from 'cleave.js'
 
 
-    export default {
+export default {
+  layout(context) {
+    return 'default2'
+  },
         mounted(){
     setTimeout(function () {
       console.log(document.querySelector('#scroll-target'));

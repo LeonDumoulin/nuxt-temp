@@ -13,6 +13,9 @@
 import Multiselect from 'vue-multiselect'
 
 export default {
+  layout(context) {
+    return 'default2'
+  },
   components: {
     Multiselect
   },

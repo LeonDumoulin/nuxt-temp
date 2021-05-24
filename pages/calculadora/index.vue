@@ -45,6 +45,10 @@
 const uuidv1 = require("uuid/v1");
 
 export default {
+  layout(context) {
+    return 'default2'
+  },
+
     data(){
         return {
             padrao : {
