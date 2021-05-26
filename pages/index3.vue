@@ -27,12 +27,7 @@
 import BarExample from '~/plugins/BarExample'
 import Vue from 'vue'
 import CKEditor from 'ckeditor4-vue'
-import Cleave from 'cleave.js';
 Vue.use(CKEditor)
-const cleave = new Cleave('.input-phone', {
-    phone: true,
-    phoneRegionCode: '{country}'
-});
 
 
 

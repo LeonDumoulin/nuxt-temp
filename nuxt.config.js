@@ -97,19 +97,16 @@ export default {
     i18n: {
         locales: [{
                 code: 'en',
-                file: 'en.json',
-                dir: 'ltr',
-                name: 'English',
+                file: 'en.json'
             },
             {
                 code: 'ar',
-                file: 'ar.json',
-                dir: 'rtl', // that will be passed to your app
-                name: 'عربي',
-            },
+                file: 'ar.json'
+            }
         ],
+        lazy: true,
         langDir: 'lang/',
-        defaultLocale: 'ar',
+        defaultLocale: 'en',
     },
     axios: {},
 
